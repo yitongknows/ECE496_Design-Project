@@ -43,7 +43,7 @@ class Home extends Component {
                     </Form.Group>
 
                     <Form.Group controlId="questionForm2">
-                        <Form.Label>Select following choose</Form.Label>
+                        <Form.Label>Select following Answer</Form.Label>
                         <Form.Control as="select" multiple>
                             <option>Question 1</option>
                             <option>Question 2</option>
