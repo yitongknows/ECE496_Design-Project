@@ -12,6 +12,18 @@ class Main extends Component {
                 <Route exact path="/">
                     <Home />
                 </Route>
+
+                <Route exact path="/exam">
+                    <ExamList />
+                </Route>
+
+                <Route exact path="/exam/APS360">
+                    <ExamPage />
+                </Route>
+
+                <Route exact path="/exam/APS360/report">
+                    <ReportPage />
+                </Route>
             </Switch>
 
         );
