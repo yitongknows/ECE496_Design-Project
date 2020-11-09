@@ -4,7 +4,7 @@
 @import "./style/Header.css";
 @import "./style/Login.css";
 @import "./style/Main.css";
-@import "./style/Home.css";
+@import "./style/Questionnaire.css";
 
 body {
   margin: 0;
