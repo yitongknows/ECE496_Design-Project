@@ -1,0 +1,12 @@
+.exam_list{
+    text-align: left;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.exam_list .exam_grid{
+    width: 100%;
+}
+.exam_list .exam_button{
+    margin-bottom: 10px;
+}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
 
-class ExamPage extends Component {
+class ReportPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,10 +17,7 @@ class ExamPage extends Component {
   }
 
   onSearch = () => {
-    console.log(this.props)
-    // this.props.history.push({
-    //   pathname: `/exam/${course}/questionnaire`,
-    // })
+
   }
 
   render() {
@@ -66,4 +63,4 @@ class ExamPage extends Component {
   }
 }
 
-export default ExamPage;
+export default ReportPage;

@@ -5,6 +5,11 @@
 @import "./style/Login.css";
 @import "./style/Main.css";
 @import "./style/Questionnaire.css";
+@import "./style/Home.css";
+@import "./style/ExamList.css";
+@import "./style/ExamPage.css";
+@import "./style/ReportPage.css";
+
 
 body {
   margin: 0;

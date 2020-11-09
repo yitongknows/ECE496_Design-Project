@@ -21,15 +21,15 @@ class Main extends Component {
                     <ExamList />
                 </Route>
 
-                <Route exact path="/exam/APS360">
+                <Route exact path="/exam/:examId">
                     <ExamPage />
                 </Route>
 
-                <Route exact path="/exam/APS360/questionnaire">
+                <Route exact path="/exam/:examId/questionnaire">
                     <Questionnaire />
                 </Route>
 
-                <Route exact path="/exam/APS360/report">
+                <Route exact path="/exam/:examId/report">
                     <ReportPage />
                 </Route>
             </Switch>
