@@ -1,10 +1,11 @@
-.questionnaire {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.questionaire {
+    text-align: left;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.questionnaire .background {
+.questionaire .background {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,18 +19,22 @@
     -webkit-background-size: cover;
 }
 
-.questionnaire .question-part{
+.questionaire .question-part{
     text-align: left;
     padding: 10px;
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.questionnaire .answer-bar {
+.questionaire .answer-bar {
     display: inline-flex;
     width: 600px;
     margin-left: 400px;
     margin-top: 200px;
     align-items:center;
     padding: 0 0 10px 0;
+}
+
+.questionaire .form {
+    margin-left: 50px;
 }

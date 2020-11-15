@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
+import Typography from "@material-ui/core/Typography";
+import {withRouter} from "react-router-dom";
 
 class ExamPage extends Component {
   constructor(props) {
@@ -16,17 +18,19 @@ class ExamPage extends Component {
     }
   }
 
-  onSearch = () => {
-    console.log(this.props)
-    // this.props.history.push({
-    //   pathname: `/exam/${course}/questionnaire`,
-    // })
+  FinishExam = () => {
+    this.props.history.push({
+      pathname: `/exam/${this.props.match.params.examId}/report`,
+    })
   }
 
   render() {
     return (
-      <div className="questionnaire">
+      <div className="exam">
         <Form className="question-part">
+          <Typography variant="h4" color="primary">
+            {this.props.match.params.examId}
+          </Typography>
           <Form.Group controlId="userForm">
             <Form.Label>Your Name</Form.Label>
             <Form.Control type="email" placeholder="Enter your Name" />
@@ -57,7 +61,7 @@ class ExamPage extends Component {
             <Form.Label>Type you answer below:</Form.Label>
             <Form.Control placeholder="Type your answer" as="textarea" rows="3" />
           </Form.Group>
-          <Button variant="primary" onClick={this.onSearch}>Save </Button>
+          <Button variant="primary" onClick={this.FinishExam.bind(this)}>Submit Answer </Button>
         </Form>
         <br/>
 
@@ -66,4 +70,4 @@ class ExamPage extends Component {
   }
 }
 
-export default ExamPage;
+export default withRouter(ExamPage);

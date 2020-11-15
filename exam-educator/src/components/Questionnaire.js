@@ -1,68 +1,99 @@
 import React, {Component} from 'react';
 import {Card, ListGroup, Form, Modal, Spinner} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { withRouter } from 'react-router-dom';
+import Question from '../data/sampleQuestion.json';
 import fetch from 'node-fetch';
 import axios from "axios";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Checkbox from '@material-ui/core/Checkbox';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+    },
+    formControl: {
+        margin: theme.spacing(3),
+    },
+}));
+
+
 
 class Questionnaire extends Component {
+
     constructor(props) {
         super(props);
+
         this.state = {
-            keyword: '',
-            result: [],
-            selected: [],
-            activeCategory: null,
-            placeToView: null,
-            showForm: false,
-            isLoading: false,
-            categories: ["test1"]
+            questions : Question,
         }
     }
 
-    onSearch = () => {
-        console.log(this.props)
+    saveAnswer = () => {
+        console.log(this.props);
+        this.props.history.push({
+            pathname: `/exam/${this.props.match.params.examId}`,
+        })
+    }
+
+    renderAnswer(ans) {
+        return (
+          <div>
+              <FormControlLabel
+                control={<Checkbox color="primary" name={ans} />}
+                label= {ans}
+              />
+          </div>
+        )
+    }
+
+
+    renderQuestion(question) {
+        const items = [];
+
+        question.answer.forEach(ans => {
+            items.push(this.renderAnswer(ans))
+        })
+        return(
+          <div>
+              <Grid container spacing={2} >
+                  <Grid item className='questionaire_grid'>
+                      <Paper>
+                          <FormControl required component="fieldset" className=''>
+                              <FormLabel component="legend">{question.question}</FormLabel>
+                              <FormGroup>
+                                  {items}
+                              </FormGroup>
+                          </FormControl>
+                      </Paper>
+
+                  </Grid>
+
+              </Grid>
+              <br/>
+          </div>
+        )
     }
 
     render() {
+        const items = [];
+        console.log(Question);
+        this.state.questions.forEach(question => {
+            items.push(this.renderQuestion(question))
+        })
         return (
             <div>
-                <Paper className="questionnaire">
-                    <Form className="question-part">
-                        <Form.Group controlId="userForm">
-                            <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="email" placeholder="Enter your Name" />
-                        </Form.Group>
-
-                        <Form.Group controlId="questionForm1">
-                            <Form.Label>Question list</Form.Label>
-                            <Form.Control as="select">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Form.Control>
-                        </Form.Group>
-
-                        <Form.Group controlId="questionForm2">
-                            <Form.Label>Select following Answer</Form.Label>
-                            <Form.Control as="select" multiple>
-                                <option>Question 1</option>
-                                <option>Question 2</option>
-                                <option>Question 3</option>
-                                <option>Question 4</option>
-                                <option>Question 5</option>
-                            </Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId="answerForm">
-                            <Form.Label>Type you answer below:</Form.Label>
-                            <Form.Control placeholder="Type your answer" as="textarea" rows="3" />
-                        </Form.Group>
-                        <Button variant="primary" onClick={this.onSearch.bind(this)}>Save </Button>
-                    </Form>
-                    <br/>
+                <Paper className="questionaire">
+                    {items}
+                    <Button variant="contained" color="primary" onClick={this.saveAnswer.bind(this)}> Save Answer </Button>
                 </Paper>
 
             </div>

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Form} from "react-bootstrap";
+import Paper from "@material-ui/core/Paper/Paper";
+import Typography from "@material-ui/core/Typography";
 
 class ReportPage extends Component {
   constructor(props) {
@@ -23,40 +25,21 @@ class ReportPage extends Component {
   render() {
     return (
       <div className="questionnaire">
-        <Form className="question-part">
-          <Form.Group controlId="userForm">
-            <Form.Label>Your Name</Form.Label>
-            <Form.Control type="email" placeholder="Enter your Name" />
-          </Form.Group>
+        <div>
+          <Paper className="report">
+            <Typography variant="body1">
+              Below is the user search history during the exam:
+            </Typography>
+            <br/>
+            <Typography variant="body1">
+              https://www.chegg.com/writing/
+            </Typography>
+            <Typography variant="body1">
+              https://stackoverflow.com/questions/53722893/how-to-retrieve-data-from-promise-object-in-react-js
+            </Typography>
+          </Paper>
 
-          <Form.Group controlId="questionForm1">
-            <Form.Label>Question list</Form.Label>
-            <Form.Control as="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </Form.Control>
-          </Form.Group>
-
-          <Form.Group controlId="questionForm2">
-            <Form.Label>Select following Answer</Form.Label>
-            <Form.Control as="select" multiple>
-              <option>Question 1</option>
-              <option>Question 2</option>
-              <option>Question 3</option>
-              <option>Question 4</option>
-              <option>Question 5</option>
-            </Form.Control>
-          </Form.Group>
-          <Form.Group controlId="answerForm">
-            <Form.Label>Type you answer below:</Form.Label>
-            <Form.Control placeholder="Type your answer" as="textarea" rows="3" />
-          </Form.Group>
-          <Button variant="primary" onClick={this.onSearch}>Save </Button>
-        </Form>
-        <br/>
+        </div>
 
       </div>
     );

@@ -1,0 +1,22 @@
+[
+  {
+    "course": "ECE496",
+    "time": "6-8 pm Jan 1st, 2020",
+    "title": "Midterm"
+  },
+  {
+    "course": "ECE497",
+    "time": "6-8 pm Jan 2nd, 2020",
+    "title": "Midterm"
+  },
+  {
+    "course": "ECE498",
+    "time": "6-8 pm Jan 3rd, 2020",
+    "title": "Final"
+  },
+  {
+    "course": "ECE499",
+    "time": "6-8 pm Jan 4th, 2020",
+    "title": "Final"
+  }
+]

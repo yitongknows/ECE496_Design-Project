@@ -4,34 +4,14 @@ import { withRouter } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Exam from '../data/examList.json';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
 class ExamList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ExamList: [
-        {
-          course: "ECE496",
-          time: "6-8 pm Jan 1st, 2020",
-          title: "Midterm",
-        },
-        {
-          course: "ECE497",
-          time: "6-8 pm Jan 2nd, 2020",
-          title: "Midterm",
-        },
-        {
-          course: "ECE496",
-          time: "6-8 pm Jan 3rd, 2020",
-          title: "Final",
-        },
-        {
-          course: "ECE497",
-          time: "6-8 pm Jan 4th, 2020",
-          title: "Final",
-        },
-      ],
+      ExamList: Exam,
     }
   }
 
@@ -72,6 +52,7 @@ class ExamList extends Component {
 
   render() {
     const items = [];
+    console.log(this.state.ExamList);
     this.state.ExamList.forEach(exam => {
       items.push(this.renderExam(exam))
     })
