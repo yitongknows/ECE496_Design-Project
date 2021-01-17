@@ -20,14 +20,16 @@ class Header extends React.Component {
         this.props.loggedOut();
     }
 
-    handleOpenSavedTrips = () => {
-        this.props.handleOpenSavedTrips();
+    handleOpenUserProfile = () =>{
+        this.props.history.push({
+            pathname: `/userprofile`,
+        })
     }
 
     showMenu = () => {
         if (this.props.isLoggedIn) {
             return <div>
-                <Dropdown.Item className="dropdown-item" type="button" onClick={this.handleOpenSavedTrips}>Saved Trip</Dropdown.Item>
+                <Dropdown.Item className="dropdown-item" type="button" onClick={this.handleOpenUserProfile}>Open Profile</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item className="dropdown-item" type="button" onClick={this.handleLogOut}>Log out</Dropdown.Item>
             </div>

@@ -5,7 +5,10 @@ import ExamList from "./ExamList"
 import ExamPage from "./ExamPage"
 import ReportPage from "./ReportPage"
 import Questionnaire from "./Questionnaire";
+import ProfessorMain from "./professor-main"
 import fetch from 'node-fetch';
+import CreateExam from "./CreateExam";
+import UserProfile from "./UserProfile";
 
 
 class Main extends Component {
@@ -15,6 +18,18 @@ class Main extends Component {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+
+                <Route  exact path="/userProfile">
+                    <UserProfile />
+                </Route>
+
+                <Route exact path="/professorMain">
+                    <ProfessorMain />
+                </Route>
+
+                <Route exact path="/createExam">
+                    <CreateExam />
                 </Route>
 
                 <Route exact path="/exam">

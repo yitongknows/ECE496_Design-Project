@@ -18,6 +18,12 @@ class Home extends Component {
     })
   }
 
+  turnToProfessorMain(){
+    this.props.history.push({
+      pathname: `/professorMain`,
+    })
+  }
+
   render() {
 
     return (
@@ -27,7 +33,7 @@ class Home extends Component {
           <br/>
           <br/>
           <br/>
-          <Button variant="contained" color="primary"> Professor </Button>
+          <Button variant="contained" color="primary" onClick={this.turnToProfessorMain.bind(this)}>  Professor </Button>
         </Paper>
       </div>
     );
