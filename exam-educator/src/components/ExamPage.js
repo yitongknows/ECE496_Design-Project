@@ -14,7 +14,8 @@ class ExamPage extends Component {
       placeToView: null,
       showForm: false,
       isLoading: false,
-      categories: ["test1"]
+      categories: ["test1"],
+      input: ''
     }
   }
 
@@ -22,6 +23,10 @@ class ExamPage extends Component {
     this.props.history.push({
       pathname: `/exam/${this.props.match.params.examId}/report`,
     })
+  }
+
+  handleTypingChanges = (text) =>{
+    console.log("Typing is: Test Input")
   }
 
   render() {
@@ -59,7 +64,7 @@ class ExamPage extends Component {
           </Form.Group>
           <Form.Group controlId="answerForm">
             <Form.Label>Type you answer below:</Form.Label>
-            <Form.Control placeholder="Type your answer" as="textarea" rows="3" />
+            <Form.Control placeholder="Type your answer"  as="textarea" rows="3" onChange={this.handleTypingChanges.bind(this)} />
           </Form.Group>
           <Button variant="primary" onClick={this.FinishExam.bind(this)}>Submit Answer </Button>
         </Form>
