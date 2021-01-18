@@ -4,9 +4,13 @@ from flask_bcrypt import generate_password_hash, check_password_hash
 
 
 class Users(db.Document):
-    user_name = db.StringField(required=True)
+    username = db.StringField(required=True)
     password = db.StringField(required=True)
+    firstname = db.StringField(required=True)
+    lastname = db.StringField(required=True)
     email = db.EmailField(required=True, unique=True)
+    student_id = db.IntField(required=True)
+    year_study = db.IntField(required=True)
 
     def generate_pw_hash(self):
         self.password = generate_password_hash(password=self.password).decode('utf-8')

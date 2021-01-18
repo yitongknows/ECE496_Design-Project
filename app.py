@@ -24,10 +24,6 @@ def create_app(config=None):
     def index():
         return "Hello World!"
 
-    # import internal resources
-    # from Users.user_login import user_page
-    # app.register_blueprint(user_page)
-
     # init api and routes
     api = Api(app=app)
     routes_manage.routes_creator(api=api)
