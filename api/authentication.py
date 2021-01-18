@@ -26,7 +26,7 @@ class SignUpApi(Resource):
         username, password, email = body['username'], str(body['password']), body["email"]
         firstname, lastname, year_study = body['firstname'], body['lastname'], int(body['year_of_study'])
         sid = int(body['sid'])
-        user_info = Users.objects(user_name=username).first()
+        user_info = Users.objects(username=username).first()
 
         if user_info is not None: # User already exists
             return jsonify({"status": 'fail', "message": "Username already exists"})

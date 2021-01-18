@@ -1,0 +1,45 @@
+{
+    "username" :"student1",
+    "password" : "password",
+    "firstname": "student1",
+    "lastname": "John",
+    "email" : "student1@gmail.com",
+    "sid" : "12345",
+    "year_of_study": 1
+}
+{
+    "username" :"student2",
+    "password" : "password",
+    "firstname": "student2",
+    "lastname": "John",
+    "email" : "student2@gmail.com",
+    "sid" : "12345",
+    "year_of_study": 2
+}
+{
+    "username" :"student3",
+    "password" : "password",
+    "firstname": "student3",
+    "lastname": "Amy",
+    "email" : "student3@gmail.com",
+    "sid" : "12345",
+    "year_of_study": 2
+}
+{
+    "username" :"student4",
+    "password" : "password",
+    "firstname": "student4",
+    "lastname": "Luke",
+    "email" : "student4@gmail.com",
+    "sid" : "12345",
+    "year_of_study": 3
+}
+{
+    "username" :"student5",
+    "password" : "password",
+    "firstname": "student5",
+    "lastname": "Guy",
+    "email" : "student5@gmail.com",
+    "sid" : "12345",
+    "year_of_study": 4
+}
