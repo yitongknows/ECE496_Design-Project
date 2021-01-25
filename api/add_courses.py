@@ -13,7 +13,7 @@ class AddCourcesApi(Resource):
         code = body['course_code']
         prof = body['professor']
         etype = body['exam_type']
-        course_exist = Users.objects(code=code).first()
+        course_exist = Courses.objects(code=code).first()
 
         if course_exist is not None: # course already exists
             return jsonify({"status": 'fail', "message": "Course already exists"})
