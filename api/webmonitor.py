@@ -1,7 +1,8 @@
 from flask import Response, request, jsonify
-from flask_restful import Resource
 from model.currentexam import CurrentExam, website
 from helpers.web_detector import get_web_classification
+from flask_restful import Resource
+
 class CreateExamApi(Resource):
     @staticmethod
     def post() -> Response:
@@ -18,7 +19,7 @@ class CreateExamApi(Resource):
         
         new_exam = CurrentExam(course = course, etype = etype, uid = uid, stime = stime)
         new_exam.save()
-        return jsonify({"status": "Successfully created article"})
+        return jsonify({"status": "Successfully created exam"})
 
 
 class ClassifyUrlApi(Resource):
@@ -36,10 +37,10 @@ class ClassifyUrlApi(Resource):
             return jsonify({"status": "User is not found"})
 
         # get website type
-        web_type = get_web_classification(url)
-        
+        web_type = get_web_classification([url])
+        print(web_type)
         # get risk level
-        if web_type == user_info.etype:
+        if web_type.lower() == user_info.etype.lower():
             risk = 'high'
         else:
             risk = 'low'
