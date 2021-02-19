@@ -65,3 +65,18 @@ class GetReportApi(Resource):
             return jsonify({"status": "fail, Exam or user not found"})
 
         return jsonify(exam_exist.urls)
+
+class EndExamApi(Resource):
+    @staticmethod
+    def post() -> Response:
+        body = request.get_json()
+        print(body)
+        course = body['course_code']
+        uid = body['user_id']
+        
+        exam_exist = CurrentExam.objects(course = course, uid = uid).first()
+        if exam_exist is None:
+            return jsonify({"status": "fail, Exam or user not found"})
+        exam_exist.delete()
+
+        return jsonify({"status": "Exam deleted"})

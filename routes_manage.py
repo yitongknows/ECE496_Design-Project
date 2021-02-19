@@ -3,7 +3,7 @@ from flask_restful import Api
 # project resources
 from api.authentication import SignUpApi
 from api.add_courses import AddCourcesApi
-from api.webmonitor import CreateExamApi, ClassifyUrlApi, GetReportApi
+from api.webmonitor import CreateExamApi, ClassifyUrlApi, GetReportApi, EndExamApi
 
 
 def routes_creator(api: Api):
@@ -12,3 +12,4 @@ def routes_creator(api: Api):
     api.add_resource(CreateExamApi, '/createexam')
     api.add_resource(ClassifyUrlApi, '/classifyurl')
     api.add_resource(GetReportApi, '/getreport')
+    api.add_resource(EndExamApi, '/endexam')
