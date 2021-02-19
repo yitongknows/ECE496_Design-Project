@@ -10,8 +10,8 @@ class CurrentExam(db.Document):
     course = db.StringField(required=True)
     etype = db.StringField(required=True)
     uid = db.StringField(required=True)
-    stime = db.StringField(required=True)
-    etime = db.StringField(required=True)
+    stime = db.StringField()
+    etime = db.StringField()
     urls = db.ListField(db.EmbeddedDocumentField(website))
 
 
