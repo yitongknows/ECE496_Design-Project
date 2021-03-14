@@ -12,6 +12,7 @@ from helpers.web_detector import load_model
 
 app = Flask(__name__)
 CORS(app)
+load_model()
 # initialize flask and db
 
 def create_app(config=None):
@@ -35,6 +36,6 @@ def create_app(config=None):
 create_app(config = 'config')
 
 if __name__ == '__main__':
-    load_model()
+
     #app.run(debug=True, host='0.0.0.0')
     app.run()
