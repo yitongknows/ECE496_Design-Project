@@ -33,7 +33,8 @@ def create_app(config=None):
 
 
 create_app(config = 'config')
-load_model()
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-    #app.run()
+    load_model()
+    #app.run(debug=True, host='0.0.0.0')
+    app.run()
