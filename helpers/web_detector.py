@@ -11,6 +11,7 @@ def load_model():
 def get_web_classification(url):
     #load model
     global test_model
+    print('retrieving result')
     #test_model=joblib.load("./helpers/model2.pkl")
     result = test_model.predict(url)
     print(result[0])
