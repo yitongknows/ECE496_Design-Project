@@ -8,6 +8,7 @@ from flask_mongoengine import MongoEngine
 from flask_cors import CORS
 import routes_manage
 from init import db
+from helpers.web_detector import load_model
 
 app = Flask(__name__)
 CORS(app)
@@ -32,7 +33,7 @@ def create_app(config=None):
 
 
 create_app(config = 'config')
-
+load_model()
 if __name__ == '__main__':
-    #app.run(debug=True, host='0.0.0.0')
-    app.run()
+    app.run(debug=True, host='0.0.0.0')
+    #app.run()
