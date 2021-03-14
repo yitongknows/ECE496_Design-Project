@@ -9,10 +9,10 @@ from flask_cors import CORS
 import routes_manage
 from init import db
 from helpers.web_detector import load_model
+from rq import Worker, Queue, Connection
 
 app = Flask(__name__)
 CORS(app)
-load_model()
 # initialize flask and db
 
 def create_app(config=None):
@@ -34,8 +34,11 @@ def create_app(config=None):
 
 
 create_app(config = 'config')
+load_model()
 
 if __name__ == '__main__':
 
     #app.run(debug=True, host='0.0.0.0')
     app.run()
+    worker = Worker(map(Queue, listen))
+    worker.work()
